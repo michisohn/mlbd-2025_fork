@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import pandas as pd
+
+
 def person_a():
     """Reads the data in data/school_performance.csv
     and returns a dataframe with the first 5,000 rows.
@@ -9,6 +12,11 @@ def person_a():
     dataframe: containing first 5,000 rows of school_performace.csv
     """
     # Code goes over here.
+
+    df = pd.read_csv("/home/mlbd-2025_fork/data/school_performance.csv")
+    
+    # Return the first 5,000 rows
+    return df.head(5000)
 
     
     raise NotImplementedError()
@@ -24,7 +32,7 @@ def person_b(df):
     dataframe: Data from the female students
     """
     # Code goes over here.
-    return df[df["gender"] = "female"]
+    return df[df["gender"] == "female"]
 
 
 def person_c(df):
@@ -36,7 +44,7 @@ def person_c(df):
     Returns:
     float: Mean grade
     """
-    # Code goes over here.
+    return df["grade"].mean()
 
     raise NotImplementedError()
 
